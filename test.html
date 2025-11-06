@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="th" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แผนกวิชาเทคโนโลยีธุรกิจดิจิทัล - วิทยาลัยเทคนิคเพชรบูรณ์</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'purple-bright': '#9333EA',
+                        'purple-dark': '#7C2D12',
+                        'purple-light': '#C084FC'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #9333EA 0%, #7C2D12 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(147, 51, 234, 0.3);
+        }
+        .menu-item {
+            transition: all 0.3s ease;
+        }
+        .menu-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="h-full bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="gradient-bg shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+                        <svg class="w-8 h-8 text-purple-bright" fill="currentColor" viewBox="0 0 24 24">
+                            <!-- DBT Logo - Digital Business Technology -->
+                            <g>
+                                <!-- พื้นหลังวงกลมหลัก (สีม่วง) -->
+                                <circle cx="12" cy="12" r="11" fill="currentColor"/>
+                                
+                                <!-- วงกลมขาวด้านใน -->
+                                <circle cx="12" cy="12" r="9.5" fill="white"/>
+                                
+                                <!-- พื้นหลังสีม่วงด้านใน -->
+                                <circle cx="12" cy="12" r="8.5" fill="currentColor"/>
+                                
+                                <!-- ตัวอักษร "D" ด้านบน -->
+                                <text x="12" y="9" text-anchor="middle" font-size="4" font-weight="bold" fill="white" font-family="Arial, sans-serif">D</text>
+                                
+                                <!-- ตัวอักษร "B" ตรงกลาง -->
+                                <text x="12" y="13" text-anchor="middle" font-size="4" font-weight="bold" fill="white" font-family="Arial, sans-serif">B</text>
+                                
+                                <!-- ตัวอักษร "T" ด้านล่าง -->
+                                <text x="12" y="17" text-anchor="middle" font-size="4" font-weight="bold" fill="white" font-family="Arial, sans-serif">T</text>
+                                
+                                <!-- ไอคอนคอมพิวเตอร์เล็ก (มุมบนขวา) -->
+                                <g transform="translate(18,3) scale(0.35)">
+                                    <rect x="0" y="2" width="10" height="7" rx="1" fill="white" opacity="0.9"/>
+                                    <rect x="1" y="3" width="8" height="5" rx="0.5" fill="currentColor"/>
+                                    <rect x="3" y="9" width="4" height="1" fill="white" opacity="0.9"/>
+                                    <rect x="4" y="10" width="2" height="0.5" fill="white" opacity="0.9"/>
+                                </g>
+                                
+                                <!-- ไอคอนธุรกิจ (มุมบนซ้าย) -->
+                                <g transform="translate(2,3) scale(0.35)">
+                                    <path d="M5 2l3 4h3l3-4v8H5V2z" fill="white" opacity="0.9"/>
+                                    <rect x="6" y="5" width="6" height="1" fill="currentColor"/>
+                                    <rect x="6" y="7" width="6" height="1" fill="currentColor"/>
+                                </g>
+                                
+                                <!-- จุดเชื่อมต่อ (ด้านล่าง) -->
+                                <g transform="translate(7,19) scale(0.6)">
+                                    <circle cx="2" cy="1" r="1" fill="white" opacity="0.8"/>
+                                    <circle cx="8" cy="1" r="1" fill="white" opacity="0.8"/>
+                                    <circle cx="14" cy="1" r="1" fill="white" opacity="0.8"/>
+                                    <path d="M3 1h4M9 1h4" stroke="white" stroke-width="0.8" opacity="0.8"/>
+                                </g>
+                                
+                                <!-- กรอบวงกลมขาวบาง -->
+                                <circle cx="12" cy="12" r="10.5" fill="none" stroke="white" stroke-width="0.3" opacity="0.6"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="text-white">
+                        <h1 class="text-xl font-bold">แผนกวิชาเทคโนโลยีธุรกิจดิจิทัล</h1>
+                        <p class="text-sm text-purple-light">วิทยาลัยเทคนิคเพชรบูรณ์</p>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation -->
+            <nav id="main-nav" class="hidden md:block pb-4">
+                <ul class="flex justify-end space-x-6">
+                    <li><a href="#home" class="menu-item px-4 py-2 text-white rounded-lg block" onclick="showSection('home')">หน้าหลัก</a></li>
+                    <li><a href="#about" class="menu-item px-4 py-2 text-white rounded-lg block" onclick="showSection('about')">เกี่ยวกับแผนก</a></li>
+                    <li><a href="#news" class="menu-item px-4 py-2 text-white rounded-lg block" onclick="showSection('news')">ข่าวประชาสัมพันธ์</a></li>
+                    <li><a href="#documents" class="menu-item px-4 py-2 text-white rounded-lg block" onclick="showSection('documents')">เอกสาร/ดาวน์โหลด</a></li>
+                    <li><a href="#contact" class="menu-item px-4 py-2 text-white rounded-lg block" onclick="showSection('contact')">ติดต่อเรา</a></li>
+                    <li><a href="#team" class="menu-item px-4 py-2 text-white rounded-lg block" onclick="showSection('team')">ผู้จัดทำ</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobile-nav" class="md:hidden hidden pb-4">
+                <ul class="space-y-2">
+                    <li><a href="#home" class="menu-item px-4 py-2 text-white rounded-lg block" onclick="showSection('home'); toggleMobileMenu()">หน้าหลัก</a></li>
+                    <li><a href="#about" class="menu-item px-4 py-2 text-white rounded-lg block" onclick="showSection('about'); toggleMobileMenu()">เกี่ยวกับแผนก</a></li>
+                    <li><a href="#news" class="menu-item px-4 py-2 text-white rounded-lg block" onclick="showSection('news'); toggleMobileMenu()">ข่าวประชาสัมพันธ์</a></li>
+                    <li><a href="#documents" class="menu-item px-4 py-2 text-white rounded-lg block" onclick="showSection('documents'); toggleMobileMenu()">เอกสาร/ดาวน์โหลด</a></li>
+                    <li><a href="#contact" class="menu-item px-4 py-2 text-white rounded-lg block" onclick="showSection('contact'); toggleMobileMenu()">ติดต่อเรา</a></li>
+                    <li><a href="#team" class="menu-item px-4 py-2 text-white rounded-lg block" onclick="showSection('team'); toggleMobileMenu()">ผู้จัดทำ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 min-h-full">
+        <!-- Home Section -->
+        <section id="home-section" class="content-section">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">ยินดีต้อนรับสู่แผนกวิชาเทคโนโลยีธุรกิจดิจิทัล</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">พัฒนาทักษะดิจิทัลเพื่ออนาคตที่สดใส เรียนรู้เทคโนโลยีล้ำสมัยและประยุกต์ใช้ในธุรกิจยุคใหม่</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="card-hover bg-white rounded-xl shadow-lg p-6 text-center md:col-span-2">
+                    <div class="w-16 h-16 bg-purple-bright rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">หลักสูตรที่เปิดสอน</h3>
+                    <p class="text-gray-600 mb-6">หลักสูตรที่ทันสมัยและตรงตามความต้องการของตลาดแรงงาน</p>
+                    <div class="grid md:grid-cols-2 gap-6 text-left">
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-bright mb-2">ประกาศนียบัตรวิชาชีพ (ปวช.)</h4>
+                            <p class="text-gray-600 text-sm">• สาขาวิชาเทคโนโลยีธุรกิจดิจิทัล</p>
+                            <p class="text-gray-600 text-sm">• ระยะเวลา 3 ปี</p>
+                            <p class="text-gray-600 text-sm">• รับนักเรียนจบ ม.3</p>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-bright mb-2">ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</h4>
+                            <p class="text-gray-600 text-sm">• สาขาวิชาเทคโนโลยีธุรกิจดิจิทัล</p>
+                            <p class="text-gray-600 text-sm">• ระยะเวลา 2 ปี</p>
+                            <p class="text-gray-600 text-sm">• รับนักเรียนจบ ม.6 หรือ ปวช.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-12">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">แนวทางการประกอบอาชีพ</h3>
+                <p class="text-gray-600 text-center mb-8">โอกาสในการทำงานและเส้นทางอาชีพหลังจบการศึกษา</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-gray-800 mb-2">ธุรกิจส่วนตัว</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• ร้านค้าออนไลน์</li>
+                            <li>• นักการตลาดดิจิทัล</li>
+                            <li>• ที่ปรึกษาธุรกิจ</li>
+                            <li>• ผู้ประกอบการ</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-gray-800 mb-2">บริษัทเอกชน</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• เจ้าหน้าที่การตลาด</li>
+                            <li>• นักวิเคราะห์ข้อมูล</li>
+                            <li>• ผู้จัดการโซเชียลมีเดีย</li>
+                            <li>• พนักงานขาย</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-gray-800 mb-2">หน่วยงานรัฐ</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• เจ้าหน้าที่คอมพิวเตอร์</li>
+                            <li>• นักวิชาการ</li>
+                            <li>• เจ้าหน้าที่ประชาสัมพันธ์</li>
+                            <li>• เจ้าหน้าที่ธุรการ</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center p-4 bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg">
+                        <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-gray-800 mb-2">ศึกษาต่อ</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• ปริญญาตรี</li>
+                            <li>• เทคโนโลยีธุรกิจ</li>
+                            <li>• การตลาด</li>
+                            <li>• คอมพิวเตอร์ธุรกิจ</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-lg">
+                    <h4 class="text-lg font-bold text-gray-800 mb-3 text-center">เงินเดือนเฉลี่ยหลังจบการศึกษา</h4>
+                    <div class="grid md:grid-cols-2 gap-4 text-center">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h5 class="font-semibold text-purple-bright">จบ ปวช.</h5>
+                            <p class="text-2xl font-bold text-gray-800">15,000 - 25,000</p>
+                            <p class="text-sm text-gray-600">บาท/เดือน</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h5 class="font-semibold text-purple-bright">จบ ปวส.</h5>
+                            <p class="text-2xl font-bold text-gray-800">20,000 - 35,000</p>
+                            <p class="text-sm text-gray-600">บาท/เดือน</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">กิจกรรมดีเด่น</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl overflow-hidden">
+                        <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center relative overflow-hidden">
+                            <img src="file:///C:/Users/Pimnipha/Downloads/images.html" alt="การแข่งขันทักษะวิชาชีพ" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <!-- Fallback SVG when image fails to load -->
+                            <svg class="w-full h-full absolute inset-0" viewBox="0 0 400 200" fill="none" style="display: none;">
+                                <!-- Background -->
+                                <rect width="400" height="200" fill="url(#blueGradient)"/>
+                                
+                                <!-- Stage/Platform -->
+                                <rect x="50" y="120" width="300" height="80" rx="8" fill="rgba(255,255,255,0.2)"/>
+                                <rect x="60" y="130" width="280" height="60" rx="4" fill="rgba(255,255,255,0.1)"/>
+                                
+                                <!-- Podium -->
+                                <rect x="150" y="100" width="40" height="30" fill="rgba(255,255,255,0.3)"/> <!-- 1st place -->
+                                <rect x="100" y="110" width="40" height="20" fill="rgba(255,255,255,0.25)"/> <!-- 2nd place -->
+                                <rect x="200" y="115" width="40" height="15" fill="rgba(255,255,255,0.2)"/> <!-- 3rd place -->
+                                
+                                <!-- People on podium -->
+                                <circle cx="170" cy="95" r="8" fill="white"/> <!-- Winner head -->
+                                <rect x="165" y="103" width="10" height="15" rx="2" fill="white"/> <!-- Winner body -->
+                                
+                                <circle cx="120" cy="105" r="6" fill="rgba(255,255,255,0.8)"/> <!-- 2nd place head -->
+                                <rect x="117" y="111" width="6" height="12" rx="1" fill="rgba(255,255,255,0.8)"/> <!-- 2nd place body -->
+                                
+                                <circle cx="220" cy="110" r="5" fill="rgba(255,255,255,0.6)"/> <!-- 3rd place head -->
+                                <rect x="218" y="115" width="4" height="10" rx="1" fill="rgba(255,255,255,0.6)"/> <!-- 3rd place body -->
+                                
+                                <!-- Trophy in winner's hands -->
+                                <rect x="168" y="88" width="4" height="8" fill="#FFD700"/>
+                                <circle cx="170" cy="86" r="2" fill="#FFD700"/>
+                                
+                                <!-- Confetti -->
+                                <circle cx="80" cy="40" r="2" fill="#FFD700" opacity="0.8"/>
+                                <circle cx="320" cy="50" r="1.5" fill="#FF6B6B" opacity="0.7"/>
+                                <circle cx="150" cy="30" r="1" fill="#4ECDC4" opacity="0.6"/>
+                                <circle cx="250" cy="35" r="1.5" fill="#45B7D1" opacity="0.8"/>
+                                <circle cx="300" cy="25" r="1" fill="#96CEB4" opacity="0.7"/>
+                                <circle cx="120" cy="25" r="1" fill="#FFEAA7" opacity="0.6"/>
+                                
+                                <!-- Audience silhouettes -->
+                                <circle cx="30" cy="160" r="4" fill="rgba(255,255,255,0.3)"/>
+                                <circle cx="40" cy="165" r="3" fill="rgba(255,255,255,0.25)"/>
+                                <circle cx="350" cy="155" r="4" fill="rgba(255,255,255,0.3)"/>
+                                <circle cx="360" cy="160" r="3" fill="rgba(255,255,255,0.25)"/>
+                                
+                                <!-- Competition banner -->
+                                <rect x="100" y="20" width="200" height="25" rx="4" fill="rgba(255,255,255,0.9)"/>
+                                <text x="200" y="35" text-anchor="middle" font-size="12" font-weight="bold" fill="#2563EB">ทักษะวิชาชีพ 2567</text>
+                                
+                                <defs>
+                                    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#3B82F6"/>
+                                        <stop offset="100%" style="stop-color:#1D4ED8"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-gray-800 mb-2">การแข่งขันทักษะวิชาชีพ</h4>
+                            <p class="text-gray-600 text-sm mb-2">🏆 รางวัลเหรียญทองระดับชาติ</p>
+                            <p class="text-gray-700 text-sm">นักเรียนแผนกได้รับรางวัลเหรียญทองจากการแข่งขันทักษะวิชาชีพระดับชาติ สาขาเทคโนโลジีธุรกิจดิจิทัล</p>
+                        </div>
+                    </div>
+
+                    <div class="card-hover bg-gradient-to-br from-green-50 to-green-100 rounded-xl overflow-hidden">
+                        <div class="h-48 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=200&fit=crop" alt="โครงการฝึกอบรมดิจิทัล" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <!-- Fallback SVG when image fails to load -->
+                            <svg class="w-full h-full absolute inset-0" viewBox="0 0 400 200" fill="none" style="display: none;">
+                                <!-- Background -->
+                                <rect width="400" height="200" fill="url(#greenGradient)"/>
+                                
+                                <!-- Training room setup -->
+                                <rect x="50" y="120" width="300" height="60" rx="8" fill="rgba(255,255,255,0.2)"/>
+                                
+                                <!-- Tables/desks -->
+                                <rect x="80" y="140" width="60" height="30" rx="4" fill="rgba(255,255,255,0.3)"/>
+                                <rect x="160" y="140" width="60" height="30" rx="4" fill="rgba(255,255,255,0.3)"/>
+                                <rect x="240" y="140" width="60" height="30" rx="4" fill="rgba(255,255,255,0.3)"/>
+                                
+                                <!-- Laptops on tables -->
+                                <rect x="85" y="145" width="20" height="15" rx="2" fill="rgba(255,255,255,0.8)"/>
+                                <rect x="115" y="145" width="20" height="15" rx="2" fill="rgba(255,255,255,0.8)"/>
+                                <rect x="165" y="145" width="20" height="15" rx="2" fill="rgba(255,255,255,0.8)"/>
+                                <rect x="195" y="145" width="20" height="15" rx="2" fill="rgba(255,255,255,0.8)"/>
+                                <rect x="245" y="145" width="20" height="15" rx="2" fill="rgba(255,255,255,0.8)"/>
+                                <rect x="275" y="145" width="20" height="15" rx="2" fill="rgba(255,255,255,0.8)"/>
+                                
+                                <!-- People silhouettes -->
+                                <circle cx="95" cy="135" r="6" fill="rgba(255,255,255,0.6)"/>
+                                <circle cx="125" cy="135" r="6" fill="rgba(255,255,255,0.6)"/>
+                                <circle cx="175" cy="135" r="6" fill="rgba(255,255,255,0.6)"/>
+                                <circle cx="205" cy="135" r="6" fill="rgba(255,255,255,0.6)"/>
+                                <circle cx="255" cy="135" r="6" fill="rgba(255,255,255,0.6)"/>
+                                <circle cx="285" cy="135" r="6" fill="rgba(255,255,255,0.6)"/>
+                                
+                                <!-- Presenter at front -->
+                                <circle cx="200" cy="100" r="8" fill="white"/>
+                                <rect x="195" y="108" width="10" height="15" rx="2" fill="white"/>
+                                
+                                <!-- Presentation screen -->
+                                <rect x="150" y="60" width="100" height="60" rx="4" fill="rgba(255,255,255,0.9)"/>
+                                <rect x="155" y="65" width="90" height="50" rx="2" fill="rgba(34,197,94,0.3)"/>
+                                
+                                <!-- Digital icons on screen -->
+                                <circle cx="180" cy="85" r="8" fill="rgba(34,197,94,0.8)"/>
+                                <rect x="176" y="81" width="8" height="8" rx="1" fill="white"/>
+                                <circle cx="220" cy="85" r="8" fill="rgba(34,197,94,0.8)"/>
+                                <path d="M216 81h8v8h-8z" fill="white"/>
+                                
+                                <!-- Training text -->
+                                <text x="200" y="105" text-anchor="middle" font-size="8" font-weight="bold" fill="rgba(34,197,94,0.8)">DIGITAL</text>
+                                
+                                <!-- WiFi symbols -->
+                                <g transform="translate(30,30) scale(0.8)">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1s1-.45 1-1v-2.26c.64.16 1.31.26 2 .26s1.36-.1 2-.26V17c0 .55.45 1 1 1s1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z" fill="white" opacity="0.7"/>
+                                </g>
+                                
+                                <defs>
+                                    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#22C55E"/>
+                                        <stop offset="100%" style="stop-color:#15803D"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-gray-800 mb-2">โครงการฝึกอบรมดิจิทัล</h4>
+                            <p class="text-gray-600 text-sm mb-2">👥 ผู้ประกอบการ 150+ คน</p>
+                            <p class="text-gray-700 text-sm">จัดโครงการฝึกอบรมเทคโนโลยีดิจิทัลสำหรับผู้ประกอบการในชุมชน เพื่อยกระดับธุรกิจสู่ยุคดิจิทัล</p>
+                        </div>
+                    </div>
+
+                    <div class="card-hover bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl overflow-hidden">
+                        <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=200&fit=crop" alt="ความร่วมมือภาคเอกชน" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <!-- Fallback SVG when image fails to load -->
+                            <svg class="w-full h-full absolute inset-0" viewBox="0 0 400 200" fill="none" style="display: none;">
+                                <!-- Background -->
+                                <rect width="400" height="200" fill="url(#purpleGradient)"/>
+                                
+                                <!-- Meeting table -->
+                                <ellipse cx="200" cy="130" rx="120" ry="40" fill="rgba(255,255,255,0.2)"/>
+                                <ellipse cx="200" cy="125" rx="110" ry="35" fill="rgba(255,255,255,0.3)"/>
+                                
+                                <!-- People around table -->
+                                <circle cx="150" cy="110" r="8" fill="rgba(255,255,255,0.8)"/>
+                                <circle cx="180" cy="105" r="8" fill="rgba(255,255,255,0.8)"/>
+                                <circle cx="220" cy="105" r="8" fill="rgba(255,255,255,0.8)"/>
+                                <circle cx="250" cy="110" r="8" fill="rgba(255,255,255,0.8)"/>
+                                <circle cx="170" cy="145" r="8" fill="rgba(255,255,255,0.8)"/>
+                                <circle cx="230" cy="145" r="8" fill="rgba(255,255,255,0.8)"/>
+                                
+                                <!-- Documents on table -->
+                                <rect x="185" y="120" width="15" height="20" rx="2" fill="rgba(255,255,255,0.9)"/>
+                                <rect x="205" y="118" width="15" height="20" rx="2" fill="rgba(255,255,255,0.9)"/>
+                                
+                                <!-- Handshake in center -->
+                                <g transform="translate(190,115) scale(0.8)">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1s1-.45 1-1v-2.26c.64.16 1.31.26 2 .26s1.36-.1 2-.26V17c0 .55.45 1 1 1s1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z" fill="white"/>
+                                </g>
+                                
+                                <!-- Company logos representation -->
+                                <rect x="50" y="40" width="40" height="30" rx="4" fill="rgba(255,255,255,0.8)"/>
+                                <rect x="110" y="35" width="40" height="30" rx="4" fill="rgba(255,255,255,0.8)"/>
+                                <rect x="250" y="35" width="40" height="30" rx="4" fill="rgba(255,255,255,0.8)"/>
+                                <rect x="310" y="40" width="40" height="30" rx="4" fill="rgba(255,255,255,0.8)"/>
+                                
+                                <!-- Connection lines -->
+                                <path d="M70 70 L180 100" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-dasharray="5,5"/>
+                                <path d="M130 65 L190 100" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-dasharray="5,5"/>
+                                <path d="M270 65 L220 100" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-dasharray="5,5"/>
+                                <path d="M330 70 L230 100" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-dasharray="5,5"/>
+                                
+                                <!-- Partnership text -->
+                                <text x="200" y="25" text-anchor="middle" font-size="12" font-weight="bold" fill="white">PARTNERSHIP</text>
+                                
+                                <defs>
+                                    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#8B5CF6"/>
+                                        <stop offset="100%" style="stop-color:#7C3AED"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-gray-800 mb-2">ความร่วมมือภาคเอกชน</h4>
+                            <p class="text-gray-600 text-sm mb-2">🤝 บริษัทชั้นนำ 5+ แห่ง</p>
+                            <p class="text-gray-700 text-sm">ลงนามความร่วมมือกับบริษัทเทคโนโลยีชั้นนำเพื่อพัฒนาหลักสูตรและเปิดโอกาสฝึกงานให้นักเรียน</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about-section" class="content-section hidden">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">เกี่ยวกับแผนกวิชาเทคโนโลยีธุรกิจดิจิทัล</h2>
+                
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-purple-bright mb-4">สาขาวิชาที่เปิดสอน</h3>
+                        <ul class="text-gray-700 space-y-2">
+                            <li>• เทคโนโลยีธุรกิจดิจิทัล</li>
+                            <li>• การตลาดดิจิทัล</li>
+                            <li>• พาณิชย์อิเล็กทรอนิกส์</li>
+                            <li>• การจัดการข้อมูลดิจิทัล</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-purple-bright mb-4">อุปกรณ์และสิ่งอำนวยความสะดวก</h3>
+                        <ul class="text-gray-700 space-y-2">
+                            <li>• ห้องปฏิบัติการคอมพิวเตอร์ทันสมัย</li>
+                            <li>• ระบบอินเทอร์เน็ตความเร็วสูง</li>
+                            <li>• ซอฟต์แวร์เฉพาะทาง</li>
+                            <li>• ห้องสมุดดิจิทัล</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news-section" class="content-section hidden">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">ข่าวประชาสัมพันธ์</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gradient-to-r from-purple-bright to-purple-dark flex items-center justify-center">
+                            <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">เปิดรับสมัครนักเรียนใหม่</h3>
+                            <p class="text-gray-600 text-sm mb-3">1 มีนาคม 2567</p>
+                            <p class="text-gray-700">เปิดรับสมัครนักเรียนเข้าศึกษาในแผนกวิชาเทคโนโลยีธุรกิจดิจิทัล ปีการศึกษา 2567</p>
+                        </div>
+                    </article>
+
+                    <article class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gradient-to-r from-purple-bright to-purple-dark flex items-center justify-center">
+                            <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">โครงการฝึกอบรมดิจิทัล</h3>
+                            <p class="text-gray-600 text-sm mb-3">15 มีนาคม 2567</p>
+                            <p class="text-gray-700">จัดโครงการฝึกอบรมเทคโนโลยีดิจิทัลสำหรับผู้ประกอบการในชุมชน</p>
+                        </div>
+                    </article>
+
+                    <article class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gradient-to-r from-purple-bright to-purple-dark flex items-center justify-center">
+                            <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-1 16H9V7h9v14z"/>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">รางวัลการแข่งขันทักษะ</h3>
+                            <p class="text-gray-600 text-sm mb-3">20 กุมภาพันธ์ 2567</p>
+                            <p class="text-gray-700">นักเรียนแผนกได้รับรางวัลเหรียญทองจากการแข่งขันทักษะวิชาชีพระดับชาติ</p>
+                        </div>
+                    </article>
+
+                    <article class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gradient-to-r from-purple-bright to-purple-dark flex items-center justify-center">
+                            <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">ความร่วมมือกับภาคเอกชน</h3>
+                            <p class="text-gray-600 text-sm mb-3">10 กุมภาพันธ์ 2567</p>
+                            <p class="text-gray-700">ลงนามความร่วมมือกับบริษัทเทคโนโลยีชั้นนำเพื่อพัฒนาหลักสูตร</p>
+                        </div>
+                    </article>
+
+                    <article class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gradient-to-r from-purple-bright to-purple-dark flex items-center justify-center">
+                            <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zM4 19h16v2H4z"/>
+                                <path d="M20 4H4v2h16V4zM6 7v2h12V7H6z"/>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">งานแสดงผลงานนักเรียน</h3>
+                            <p class="text-gray-600 text-sm mb-3">5 กุมภาพันธ์ 2567</p>
+                            <p class="text-gray-700">จัดแสดงผลงานโครงการจบการศึกษาของนักเรียนชั้นปีที่ 3</p>
+                        </div>
+                    </article>
+
+                    <article class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gradient-to-r from-purple-bright to-purple-dark flex items-center justify-center">
+                            <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-gray-800 mb-2">การอบรมครูผู้สอน</h3>
+                            <p class="text-gray-600 text-sm mb-3">25 มกราคม 2567</p>
+                            <p class="text-gray-700">จัดอบรมพัฒนาศักยภาพครูผู้สอนด้านเทคโนโลยีใหม่ล่าสุด</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documents Section -->
+        <section id="documents-section" class="content-section hidden">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">เอกสาร/ดาวน์โหลด</h2>
+                
+                <div class="flex justify-center gap-6">
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-purple-bright mb-4">เอกสารสำหรับนักเรียน</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                   
+                                    </svg>
+                                    <span class="text-gray-700">ตารางเรียน ปีการศึกษา 2567</span>
+                                </div>
+                                <button class="text-purple-bright hover:text-purple-dark font-medium">ดาวน์โหลด</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+        <!-- Contact Section -->
+        <section id="contact-section" class="content-section hidden">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">ติดต่อเรา</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-xl font-bold text-purple-bright mb-6">ข้อมูลการติดต่อ</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-purple-bright mt-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">ที่อยู่</h4>
+                                    <p class="text-gray-600">แผนกวิชาเทคโนโลยีธุรกิจดิจิทัล<br>วิทยาลัยเทคนิคเพชรบูรณ์<br>123 ถนนเพชรบูรณ์ ตำบลในเมือง<br>อำเภอเมือง จังหวัดเพชรบูรณ์ 67000</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-purple-bright mt-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">โทรศัพท์</h4>
+                                    <p class="text-gray-600">056-123-456<br>056-123-457 (แฟกซ์)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-purple-bright mt-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">อีเมล</h4>
+                                    <p class="text-gray-600">digital.business@ptc.ac.th<br>info@ptc.ac.th</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <svg class="w-6 h-6 text-purple-bright mt-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">เวลาทำการ</h4>
+                                    <p class="text-gray-600">จันทร์ - ศุกร์: 08:00 - 16:30<br>เสาร์ - อาทิตย์: ปิด</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-xl font-bold text-purple-bright mb-6">ส่งข้อความถึงเรา</h3>
+                        
+                        <form class="space-y-4" onsubmit="handleContactForm(event)">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">ชื่อ-นามสกุล</label>
+                                <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-bright focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">อีเมล</label>
+                                <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-bright focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">เบอร์โทรศัพท์</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-bright focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">หัวข้อ</label>
+                                <input type="text" id="subject" name="subject" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-bright focus:border-transparent">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">ข้อความ</label>
+                                <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-bright focus:border-transparent"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-purple-bright text-white py-2 px-4 rounded-lg hover:bg-purple-dark transition duration-300 font-medium">
+                                ส่งข้อความ
+                            </button>
+                        </form>
+                        
+                        <div id="contact-message" class="mt-4 p-3 rounded-lg hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team-section" class="content-section hidden">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">ผู้จัดทำ</h2>
+                
+                
+                         
+                    <!doctype html>
+<html lang="th">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Members</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="bg-gray-50 p-8">
+  <div class="max-w-6xl mx-auto">
+   <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="card-hover bg-white rounded-xl shadow-lg p-6 text-center">
+     <div class="w-24 h-24 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-4">
+      <svg class="w-12 h-12 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+      </svg>
+     </div>
+     <h3 class="text-lg font-bold text-gray-800 mb-2">นางสาวพิมพ์นิภา ใจแสง</h3>
+     <p class="text-purple-600 font-medium mb-2">นักเรียนชั้นปีที่ 3</p>
+     <p class="text-gray-600 text-sm">ผู้ช่วยพัฒนาเว็บไซต์และจัดทำเนื้อหา</p>
+    </div>
+    <div class="card-hover bg-white rounded-xl shadow-lg p-6 text-center">
+     <div class="w-24 h-24 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-4">
+      <svg class="w-12 h-12 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+      </svg>
+     </div>
+     <h3 class="text-lg font-bold text-gray-800 mb-2">นางสาวชญานิศ เหลืองศิริเธียร</h3>
+     <p class="text-purple-600 font-medium mb-2">นักเรียนชั้นปีที่ 3</p>
+     <p class="text-gray-600 text-sm">ผู้ช่วยออกแบบกราฟิกและจัดการเนื้อหา</p>
+    </div>
+    <div class="card-hover bg-white rounded-xl shadow-lg p-6 text-center">
+     <div class="w-24 h-24 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-4">
+      <svg class="w-12 h-12 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+      </svg>
+     </div>
+     <h3 class="text-lg font-bold text-gray-800 mb-2">นางสาวจิรัชญา นวลอ่อน</h3>
+     <p class="text-purple-600 font-medium mb-2">นักเรียนชั้นปีที่ 3</p>
+     <p class="text-gray-600 text-sm">ผู้ช่วยพัฒนาเว็บไซต์และจัดทำเนื้อหา</p>
+    </div>
+   </div>
+  </div>
+  <script>
+        const defaultConfig = {
+            background_color: "#f9fafb",
+            card_color: "#ffffff",
+            gradient_start: "#a855f7",
+            gradient_end: "#7c3aed",
+            text_color: "#1f2937",
+            accent_color: "#9333ea"
+        };
+
+        async function onConfigChange(config) {
+            document.body.style.backgroundColor = config.background_color || defaultConfig.background_color;
+            
+            const cards = document.querySelectorAll('.card-hover');
+            cards.forEach(card => {
+                card.style.backgroundColor = config.card_color || defaultConfig.card_color;
+            });
+            
+            const gradients = document.querySelectorAll('.bg-gradient-to-r');
+            gradients.forEach(gradient => {
+                gradient.style.background = `linear-gradient(to right, ${config.gradient_start || defaultConfig.gradient_start}, ${config.gradient_end || defaultConfig.gradient_end})`;
+            });
+            
+            const headings = document.querySelectorAll('h3');
+            headings.forEach(heading => {
+                heading.style.color = config.text_color || defaultConfig.text_color;
+            });
+            
+            const accents = document.querySelectorAll('.text-purple-600');
+            accents.forEach(accent => {
+                accent.style.color = config.accent_color || defaultConfig.accent_color;
+            });
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [
+                    {
+                        get: () => config.background_color || defaultConfig.background_color,
+                        set: (value) => {
+                            config.background_color = value;
+                            window.elementSdk.setConfig({ background_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.card_color || defaultConfig.card_color,
+                        set: (value) => {
+                            config.card_color = value;
+                            window.elementSdk.setConfig({ card_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.gradient_start || defaultConfig.gradient_start,
+                        set: (value) => {
+                            config.gradient_start = value;
+                            window.elementSdk.setConfig({ gradient_start: value });
+                        }
+                    },
+                    {
+                        get: () => config.text_color || defaultConfig.text_color,
+                        set: (value) => {
+                            config.text_color = value;
+                            window.elementSdk.setConfig({ text_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.accent_color || defaultConfig.accent_color,
+                        set: (value) => {
+                            config.accent_color = value;
+                            window.elementSdk.setConfig({ accent_color: value });
+                        }
+                    }
+                ],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map();
+        }
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99a43d7212c48960',t:'MTc2MjQyODQyOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
+                <div class="mt-12 bg-white rounded-xl shadow-lg p-8 text-center">
+                    <h3 class="text-2xl font-bold text-purple-bright mb-4">ขอบคุณ</h3>
+                    <p class="text-gray-700 max-w-3xl mx-auto">
+                        ขอขอบคุณทุกท่านที่มีส่วนร่วมในการพัฒนาเว็บไซต์นี้ เพื่อเป็นช่องทางในการประชาสัมพันธ์และให้ข้อมูลแก่นักเรียน ผู้ปกครอง และผู้ที่สนใจในแผนกวิชาเทคโนโลยีธุรกิจดิจิทัล วิทยาลัยเทคนิคเพชรบูรณ์
+                    </p>
+                    <div class="mt-6">
+                        <p class="text-sm text-gray-500">พัฒนาเมื่อ: มีนาคม 2567</p>
+                        <p class="text-sm text-gray-500">เวอร์ชัน: 1.0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white mt-16">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg">
+                            <svg class="w-6 h-6 text-purple-bright" fill="currentColor" viewBox="0 0 24 24">
+                                <!-- DBT Logo - Digital Business Technology -->
+                                <g>
+                                    <!-- พื้นหลังวงกลมหลัก (สีม่วง) -->
+                                    <circle cx="12" cy="12" r="11" fill="currentColor"/>
+                                    
+                                    <!-- วงกลมขาวด้านใน -->
+                                    <circle cx="12" cy="12" r="9.5" fill="white"/>
+                                    
+                                    <!-- พื้นหลังสีม่วงด้านใน -->
+                                    <circle cx="12" cy="12" r="8.5" fill="currentColor"/>
+                                    
+                                    <!-- ตัวอักษร "D" ด้านบน -->
+                                    <text x="12" y="9" text-anchor="middle" font-size="4" font-weight="bold" fill="white" font-family="Arial, sans-serif">D</text>
+                                    
+                                    <!-- ตัวอักษร "B" ตรงกลาง -->
+                                    <text x="12" y="13" text-anchor="middle" font-size="4" font-weight="bold" fill="white" font-family="Arial, sans-serif">B</text>
+                                    
+                                    <!-- ตัวอักษร "T" ด้านล่าง -->
+                                    <text x="12" y="17" text-anchor="middle" font-size="4" font-weight="bold" fill="white" font-family="Arial, sans-serif">T</text>
+                                    
+                                    <!-- ไอคอนคอมพิวเตอร์เล็ก (มุมบนขวา) -->
+                                    <g transform="translate(18,3) scale(0.35)">
+                                        <rect x="0" y="2" width="10" height="7" rx="1" fill="white" opacity="0.9"/>
+                                        <rect x="1" y="3" width="8" height="5" rx="0.5" fill="currentColor"/>
+                                        <rect x="3" y="9" width="4" height="1" fill="white" opacity="0.9"/>
+                                        <rect x="4" y="10" width="2" height="0.5" fill="white" opacity="0.9"/>
+                                    </g>
+                                    
+                                    <!-- ไอคอนธุรกิจ (มุมบนซ้าย) -->
+                                    <g transform="translate(2,3) scale(0.35)">
+                                        <path d="M5 2l3 4h3l3-4v8H5V2z" fill="white" opacity="0.9"/>
+                                        <rect x="6" y="5" width="6" height="1" fill="currentColor"/>
+                                        <rect x="6" y="7" width="6" height="1" fill="currentColor"/>
+                                    </g>
+                                    
+                                    <!-- จุดเชื่อมต่อ (ด้านล่าง) -->
+                                    <g transform="translate(7,19) scale(0.6)">
+                                        <circle cx="2" cy="1" r="1" fill="white" opacity="0.8"/>
+                                        <circle cx="8" cy="1" r="1" fill="white" opacity="0.8"/>
+                                        <circle cx="14" cy="1" r="1" fill="white" opacity="0.8"/>
+                                        <path d="M3 1h4M9 1h4" stroke="white" stroke-width="0.8" opacity="0.8"/>
+                                    </g>
+                                    
+                                    <!-- กรอบวงกลมขาวบาง -->
+                                    <circle cx="12" cy="12" r="10.5" fill="none" stroke="white" stroke-width="0.3" opacity="0.6"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">แผนกวิชาเทคโนโลยีธุรกิจดิจิทัล</h3>
+                            <p class="text-sm text-purple-light">วิทยาลัยเทคนิคเพชรบูรณ์</p>
+                        </div>
+                    </div>
+                    <p class="text-purple-light text-sm">พัฒนาทักษะดิจิทัลเพื่ออนาคตที่สดใส</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">เมนูหลัก</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="text-purple-light hover:text-white transition duration-300" onclick="showSection('home')">หน้าหลัก</a></li>
+                        <li><a href="#about" class="text-purple-light hover:text-white transition duration-300" onclick="showSection('about')">เกี่ยวกับแผนก</a></li>
+                        <li><a href="#news" class="text-purple-light hover:text-white transition duration-300" onclick="showSection('news')">ข่าวประชาสัมพันธ์</a></li>
+                        <li><a href="#contact" class="text-purple-light hover:text-white transition duration-300" onclick="showSection('contact')">ติดต่อเรา</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">ติดต่อเรา</h4>
+                    <div class="space-y-2 text-sm text-purple-light">
+                        <p>📍 123 ถนนเพชรบูรณ์ ตำบลในเมือง</p>
+                        <p>📞 056-123-456</p>
+                        <p>✉️ digital.business@ptc.ac.th</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">ติดตามเรา</h4>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-purple-light border-opacity-30 mt-8 pt-8 text-center">
+                <p class="text-purple-light text-sm">
+                    © 2567 แผนกวิชาเทคโนโลยีธุรกิจดิจิทัล วิทยาลัยเทคนิคเพชรบูรณ์ สงวนลิขสิทธิ์
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        function showSection(sectionName) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section
+            const targetSection = document.getElementById(sectionName + '-section');
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+            
+            // Update active menu item
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => {
+                item.classList.remove('bg-white', 'bg-opacity-20');
+            });
+            
+            const activeItems = document.querySelectorAll(`a[href="#${sectionName}"]`);
+            activeItems.forEach(item => {
+                item.classList.add('bg-white', 'bg-opacity-20');
+            });
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.toggle('hidden');
+        }
+
+        // Contact form handler
+        function handleContactForm(event) {
+            event.preventDefault();
+            
+            const messageDiv = document.getElementById('contact-message');
+            messageDiv.className = 'mt-4 p-3 rounded-lg bg-green-100 text-green-800';
+            messageDiv.textContent = 'ขอบคุณสำหรับข้อความของคุณ เราจะติดต่อกลับโดยเร็วที่สุด';
+            messageDiv.classList.remove('hidden');
+            
+            // Reset form
+            event.target.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                messageDiv.classList.add('hidden');
+            }, 5000);
+        }
+
+        // Mobile menu button event
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('home');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99a3e16090d5895b',t:'MTc2MjQyNDY1OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
